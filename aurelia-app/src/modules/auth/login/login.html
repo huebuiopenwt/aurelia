@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="content">
+    <form submit.trigger="handleLogin()">
+      <div class="form-control-wrapper">
+        <label for="email" class="label"> Email:</label>
+        <input
+          id="email"
+          type="text"
+          value.bind="model.email"
+          placeholder="Enter your email"
+          class="form-control"
+        />
+        <p if.bind="isHasError(errors.email)">{{ errors.email }}</p>
+      </div>
+      <div class="form-control-wrapper">
+        <label for="password" class="label">Password:</label>
+        <input
+          id="password"
+          type="password"
+          value.bind="model.password"
+          placeholder="Enter your password"
+          Password
+          class="form-control"
+        />
+        <p if.bind="isHasError(errors.password)">{{ errors.password }}</p>
+      </div>
+      <div class="form-submit-wrapper">
+        <button type="submit" class="button">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

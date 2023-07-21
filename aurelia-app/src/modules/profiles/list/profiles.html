@@ -1,0 +1,32 @@
+<div>
+  <div class="title-wrapper">
+    <h2>Profiles</h2>
+    <button class="button" click.trigger="navigateToCreate()">
+      Create profile
+    </button>
+  </div>
+  <table>
+    <tr>
+      <th>Full name</th>
+      <th>Date Of birth</th>
+      <th>Gender</th>
+      <th>Identifier</th>
+      <th>Phone number</th>
+      <th>Role</th>
+      <th>Position</th>
+      <th>Start date</th>
+      <th>End date</th>
+    </tr>
+    <tr repeat.for="item of userProfiles">
+      <td>${item.firstName} ${item.lastName}</td>
+      <td>${ item.dateOfBirth || '-'}</td>
+      <td>${ item.gender }</td>
+      <td>${ item.identifier || '-' }</td>
+      <td>${ item.phoneNumber || '-' }</td>
+      <td>${ item.role }</td>
+      <td>${ item.position }</td>
+      <td>${ item.startDate || '-'}</td>
+      <td>${ item.endDate || '-'}</td>
+    </tr>
+  </table>
+</div>

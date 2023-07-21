@@ -1,0 +1,168 @@
+<div class="container">
+  <form submit.trigger="handleCreateProfile()">
+    <h2> Create profile </h2>
+    <div class="form-control-wrapper">
+      <label for="firstName" class="label"> First name*</label>
+      <input
+        id="firstName"
+        type="text"
+        value.bind="profile.firstName"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.firstName)">{{ errors.firstName }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="lastName" class="label"> Last name*</label>
+      <input
+        id="lastName"
+        type="text"
+        value.bind="profile.lastName"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.lastName)">{{ errors.lastName }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="lastName" class="label"> Date of birth</label>
+      <input
+        id="dateOfBirth"
+        type="date"
+        value.bind="profile.dateOfBirth"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.dateOfBirth)">{{ errors.dateOfBirth }}</p>
+    </div>
+    <div>
+      <div>
+        <p for="gender" class="label"> Gender*</label>
+      </div>
+      <div class="gender-wrapper">
+        <div class="gender-item-wrapper">
+          <label for="male" class="label"> Male</label>
+          <input
+            id="gender"
+            name="gender"
+            type="radio"
+            value="MALE"
+            checked.bind="profile.gender"
+          />
+        </div>
+        <div class="gender-item-wrapper">
+          <label for="female" class="label"> Female</label>
+          <input
+            id="gender"
+            name="gender"
+            type="radio"
+            value="FEMALE"
+            checked.bind="profile.gender"
+          />
+        </div>
+      </div>
+      <p if.bind="isHasError(errors.gender)">{{ errors.gender }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="identifier" class="label"> ID number</label>
+      <input
+        id="identifier"
+        type="text"
+        value.bind="profile.identifier"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.identifier)">{{ errors.idNumber }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="phoneNumber" class="label"> Phone</label>
+      <input
+        id="phoneNumber"
+        type="text"
+        value.bind="profile.phoneNumber"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.phoneNumber)">{{ errors.phone }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="email" class="label"> Email address</label>
+      <input
+        id="email"
+        type="text"
+        value.bind="profile.email"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.email)">{{ errors.email }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="email" class="label"> Company email*</label>
+      <input
+        id="companyEmail"
+        type="text"
+        value.bind="profile.companyEmail"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.email)">{{ errors.companyEmail }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="address" class="label"> Address </label>
+      <input
+        id="address"
+        type="text"
+        value.bind="profile.address"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.address)">{{ errors.address }}</p>
+    </div>
+    <div class="form-control-wrapper">
+      <label for="university" class="label"> University </label>
+      <input
+        id="university"
+        type="text"
+        value.bind="profile.university"
+        class="form-control"
+      />
+      <p if.bind="isHasError(errors.university)">{{ errors.university }}</p>
+    </div>
+    <div class="form-control-merge-wrapper">
+      <div class="half-wrapper">
+        <label for="role" class="label"> Role*</label>
+        <select name="role" id="role" class="select-control" value.bind="profile.contractType">
+          <template repeat.for="contractType of contractTypes">
+            <option value.bind="contractType.value">${contractType.label}</option>
+          </template>
+        </select>
+        <p if.bind="isHasError(errors.contractType)">{{ errors.contractType }}</p>
+      </div>
+      <div class="half-wrapper">
+        <label for="position" class="label"> Position*</label>
+        <select name="position" id="position" class="select-control" value.bind="profile.positionId">
+          <template repeat.for="position of positions">
+            <option value.bind="position.id">${position.name}</option>
+          </template>
+        </select>
+        <p if.bind="isHasError(errors.position)">{{ errors.position }}</p>
+      </div>
+    </div>
+    <div class="form-control-merge-wrapper">
+      <div class="half-wrapper">
+        <label for="startDate" class="label"> Start Date*</label>
+        <input
+          id="startDate"
+          type="date"
+          value.bind="profile.startDate"
+          class="form-control"
+        />
+        <p if.bind="isHasError(errors.startDate)">{{ errors.startDate }}</p>
+      </div>
+      <div class="half-wrapper">
+        <label for="endDate" class="label"> End Date </label>
+        <input
+          id="endDate"
+          type="date"
+          value.bind="profile.endDate"
+          class="form-control"
+        />
+        <p if.bind="isHasError(errors.endDate)">{{ errors.endDate }}</p>
+      </div>
+    </div>
+    <div class="submit-wrapper">
+      <button type="submit" class="button">Save</button>
+    </div>
+  </form>
+</div>
